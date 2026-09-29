@@ -46,6 +46,10 @@ Sales-scope/
 │   ├── 04_regional_analysis.sql
 │   ├── 05_salesperson_performance.sql
 │   └── 06_advanced_analysis.sql
+├── dashboard/
+│   ├── powerbi_view.sql
+│   ├── measures.dax
+│   └── POWER_BI_GUIDE.md
 └── README.md
 ```
 
@@ -108,9 +112,16 @@ Metric or trend
 Business interpretation
 ```
 
+## Power BI dashboard layer
+
+The `dashboard/` folder prepares this project for a Power BI reporting layer. It contains a PostgreSQL reporting view, reusable DAX measures, the recommended dashboard layout, visual mappings and slicers.
+
+The Power BI `.pbix` itself is not included yet because it should be created and validated in Power BI Desktop rather than represented as a dashboard that has not actually been built.
+
+See [dashboard/POWER_BI_GUIDE.md](dashboard/POWER_BI_GUIDE.md) for the build instructions.
+
 ## Future improvements
 
-- add a Power BI dashboard
 - expand the dataset with more dates and products
 - add customer cohort and retention analysis
 - add reusable database views for reporting
