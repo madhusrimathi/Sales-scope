@@ -1,0 +1,26 @@
+Net Revenue =
+CALCULATE(
+    SUM(vw_sales_dashboard[net_sales]),
+    vw_sales_dashboard[status] = "Completed"
+)
+
+Completed Orders =
+CALCULATE(
+    DISTINCTCOUNT(vw_sales_dashboard[order_id]),
+    vw_sales_dashboard[status] = "Completed"
+)
+
+Units Sold =
+CALCULATE(
+    SUM(vw_sales_dashboard[quantity]),
+    vw_sales_dashboard[status] = "Completed"
+)
+
+Average Order Value =
+DIVIDE([Net Revenue], [Completed Orders])
+
+Estimated Gross Profit =
+CALCULATE(
+    SUM(vw_sales_dashboard[estimated_gross_profit]),
+    vw_sales_dashboard[status] = "Completed"
+)
